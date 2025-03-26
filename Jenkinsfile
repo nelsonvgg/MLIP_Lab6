@@ -20,15 +20,15 @@ pipeline {
 
                 # TODO Complete the command to run pytest
                 # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
-
+                conda run -n mlip pytest
                 # Initialize Conda
                 #source ~/.bashrc
                 # Activate the Conda environment
-                conda activate mlip
+                # conda activate mlip
                 # Run pytest
-                pytest
+                # pytest
                 # Deactivate the Conda environment
-                conda deactivate
+                # conda deactivate
 
                 #echo 'pytest not runned'
                 #exit 1 #comment this line after implementing Jenkinsfile
