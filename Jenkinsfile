@@ -16,6 +16,7 @@ pipeline {
                 echo 'Test Step: We run testing tool like pytest here'
 
                 # TODO fill out the path to conda here
+                source /var/jenkins_home/miniconda3/etc/profile.d/conda.sh
                 conda init
                 conda activate
 
