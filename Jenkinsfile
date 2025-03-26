@@ -21,8 +21,8 @@ pipeline {
                 # TODO Complete the command to run pytest
                 # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
 
-                 # Initialize Conda
-                source ~/.bashrc
+                # Initialize Conda
+                #source ~/.bashrc
                 # Activate the Conda environment
                 conda activate mlip
                 # Run pytest
