@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh '''#!/bin/bash
+                sh #!/bin/bash
                 echo 'Test Step: We run testing tool like pytest here'
 
                 # TODO fill out the path to conda here
@@ -21,6 +21,7 @@ pipeline {
                 # TODO Complete the command to run pytest
                 # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
                 # conda run -n mlip pytest
+                
                 # Initialize Conda
                 #source ~/.bashrc
                 # Activate the Conda environment
@@ -33,8 +34,7 @@ pipeline {
 
                 #echo 'pytest not runned'
                 #exit 1 #comment this line after implementing Jenkinsfile
-                '''
-
+                
             }
         }
         stage('Deploy') {
