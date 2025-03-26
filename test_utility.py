@@ -38,4 +38,24 @@ def feature_target_sample(housing_data_sample):
 def test_data_split(feature_target_sample):
     return_tuple = data_split(*feature_target_sample)
     # TODO test if the length of return_tuple is 4
-    raise NotImplemented
+    # Check if the return value is a tuple of length 4
+    assert isinstance(return_tuple, tuple), "data_split should return a tuple"
+    assert len(return_tuple) == 4, "data_split should return a tuple of length 4"
+    
+    # Unpack the tuple
+    X_train, X_test, y_train, y_test = return_tuple
+    
+    # Check if the splits are pandas DataFrames/Series
+    assert isinstance(X_train, pd.DataFrame), "X_train should be a pandas DataFrame"
+    assert isinstance(X_test, pd.DataFrame), "X_test should be a pandas DataFrame"
+    assert isinstance(y_train, pd.Series), "y_train should be a pandas Series"
+    assert isinstance(y_test, pd.Series), "y_test should be a pandas Series"
+    
+    # Check if the lengths of the splits are consistent
+    assert len(X_train) == len(y_train), "X_train and y_train should have the same length"
+    assert len(X_test) == len(y_test), "X_test and y_test should have the same length"
+    
+    # Check if the total number of rows matches the original dataset
+    total_rows = len(X_train) + len(X_test)
+    assert total_rows == feature_target_sample[0].shape[0], "Total rows in splits should match the original dataset"
+    #raise NotImplemented
