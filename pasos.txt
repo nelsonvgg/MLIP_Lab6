@@ -1,0 +1,27 @@
+INSTALAR MINICONDA
+1. Correr desde CMD: docker exec -it --user root bold_sinoussi bash
+2. Instalar WGET: apt-get update && apt-get install -y wget
+###3. Crear directorio: mkdir -p ~/miniconda3
+3. Descargar MINICONDA: wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+4. Instalar MINICONDA: bash Miniconda3-latest-Linux-x86_64.sh
+5. Refrescar la terminal: source ~/.bashrc
+GRABAR IMAGEN DE CONTAINER JENKINS + MINICONDA
+docker commit -a "Your Name" -m "Added custom configurations" dreamy_allen my_jenkins_image:latest
+
+CREAR AMBIENTE MINICONDA
+1. Crear enviroment: conda create -n mlip python pytest numpy pandas scikit-learn -c conda-forge
+2. Activar enviroment : conda activate mlip
+
+
+CREAR TOKEN GITHUB
+Username: nelsonvgg
+Password: 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
+
+
+1. Correr contenedor dreamy_allen: docker exec -it --user root dreamy_allen bash
+ACTIVAR CONDA
+2. cd /var/jenkins_home/miniconda3/bin/
+3. source activate
+4. conda init --all
+ACTIVAR JENKINS
+5. Browse to http://localhost:8080
